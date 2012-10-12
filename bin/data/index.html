@@ -1,0 +1,74 @@
+<html>
+<head>
+	<style>
+	</style>
+</head>
+<body>
+	<div>
+		<button id="all">Play All</button>
+	</div>
+<script src="sprite.js"></script>
+<script>
+	var movies = [];
+	for (var i = 0; i < sprite.numMovies; i++) {
+		var movie = document.createElement('div');
+		movie.style.float = "left";
+		movie.style.width = sprite.width;
+		movie.style.height = sprite.height;
+		movie.style.backgroundImage = 'url('+sprite.image+')';
+		movie.style.backgroundSize = sprite.backgroundSize;
+		movie.style.backgroundPosition = sprite.coordinates[i][0];
+		document.body.appendChild(movie);
+		movies.push(movie);
+	}
+
+	var Animator = function(settings){
+		var
+		totalDuration = Math.floor(settings.duration * 1000),
+		frameDuration = Math.floor(totalDuration / settings.frames),
+		currentFrame,
+		startTime,
+		currentElements;	
+		var run = function(whichElements){
+			currentElements = whichElements;
+			currentFrame = -1;
+			startTime = Date.now();
+
+			for (var i = 0; i < settings.elements; i++) {
+				settings.elements[i].style.backgroundPosition = sprite.coordinates[i][0];
+			}
+			animate();
+		}
+		var animate = function() {
+			var internaltime = Date.now()-startTime;
+			if(internaltime>totalDuration)return;
+			var frame = ((internaltime%totalDuration)/frameDuration)|0;
+			if(frame != currentFrame){
+				currentFrame = frame;
+				render(frame);
+			}
+			if(frame < settings.frames-1)window.webkitRequestAnimationFrame(animate);
+			else render(0)
+		}
+		this.run = run;
+
+		var render = function(frame){
+			for (var i = 0; i < currentElements.length; i++) {
+				settings.elements[currentElements[i]].style.backgroundPosition = sprite.coordinates[currentElements[i]][frame];
+			}
+		}
+	}
+
+	var animator = new Animator({
+		elements : movies,
+		duration : sprite.duration,
+		frames : sprite.numFrames
+	});
+
+	document.getElementById('all').addEventListener('click', function(){
+		animator.run([0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]);
+	});
+	
+</script>
+</body>
+</html>
