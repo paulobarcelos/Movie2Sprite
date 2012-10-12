@@ -3,5 +3,5 @@
 	<height>200</height>
 </movieSize>
 <texSize>4096</texSize>
-<duration>2</duration>
-<fps>15</fps>
+<duration>2.0</duration>
+<fps>16</fps>

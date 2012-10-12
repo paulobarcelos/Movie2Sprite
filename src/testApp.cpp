@@ -58,7 +58,7 @@ void testApp::setup(){
 		player.loadMovie(dir.getPath(i));
 		cout << dir.getPath(i) << endl;
 		int playerNumFrames = player.getTotalNumFrames();
-		float offset = playerNumFrames / numFrames;
+		float offset = (float)playerNumFrames / (float)numFrames;
 		
 		js << "[";
 		for (float j = 0; j < numFrames; j++) {
@@ -68,7 +68,7 @@ void testApp::setup(){
 			js << "\"-" << (column * movieSize.x) << "px -" << (row * movieSize.y) << "px\"";
 			if(j < numFrames-1) js << ",";
 			
-			player.setFrame((int)((float)j * offset)+1);
+			player.setFrame(j * offset+1);
 			player.update();
 			fbo.begin();
 			player.draw(floor(column * size.x), floor(row * size.y), ceil(size.x), ceil(size.y));
