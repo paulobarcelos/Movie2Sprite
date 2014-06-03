@@ -3,10 +3,10 @@
 #include "ofMain.h"
 #include "ofxXmlSettings.h"
 
-class testApp : public ofBaseApp{
-
-	public:
-		void setup();
-
+class ofApp : public ofBaseApp{
+    
+public:
+    void setup();
+    
 	
 };

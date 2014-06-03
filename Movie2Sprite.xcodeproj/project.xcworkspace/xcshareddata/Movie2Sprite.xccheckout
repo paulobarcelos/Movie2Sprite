@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>275A2428-98AC-43A2-B59C-5F5A07C49149</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Movie2Sprite</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0F432421-EC0A-413D-8AB2-1707EA53378F</key>
+		<string>ssh://github.com/paulobarcelos/Movie2Sprite.git</string>
+		<key>59619CD2-CCBB-42FE-AE67-D7E89771E8DC</key>
+		<string>ssh://github.com/openframeworks/openFrameworks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>apps/Movie2Sprite/Movie2Sprite.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0F432421-EC0A-413D-8AB2-1707EA53378F</key>
+		<string>../..</string>
+		<key>59619CD2-CCBB-42FE-AE67-D7E89771E8DC</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/paulobarcelos/Movie2Sprite.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>59619CD2-CCBB-42FE-AE67-D7E89771E8DC</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0F432421-EC0A-413D-8AB2-1707EA53378F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Movie2Sprite</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>59619CD2-CCBB-42FE-AE67-D7E89771E8DC</string>
+			<key>IDESourceControlWCCName</key>
+			<string>openFrameworks</string>
+		</dict>
+	</array>
+</dict>
+</plist>

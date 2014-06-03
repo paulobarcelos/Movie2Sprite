@@ -1,30 +1,30 @@
-#include "testApp.h"
+#include "ofApp.h"
 
 //--------------------------------------------------------------
-void testApp::setup(){
+void ofApp::setup(){
 	ofDirectory dir;
 	ofVideoPlayer player;
 	
 	int edge = 2;
 	
-	ofxXmlSettings settings;	
+	ofxXmlSettings settings;
 	settings.loadFile("settings.xml");
 	
-
+    
 	ofVec2f movieSize(settings.getValue("movieSize:width", 128) + edge,
 					  settings.getValue("movieSize:height", 128) + edge);
-	ofVec2f texSize(settings.getValue("texSize", 1024),
-					settings.getValue("texSize", 1024));
+	ofVec2f texSize(settings.getValue("texSize:width", 1024),
+					settings.getValue("texSize:height", 1024));
 	float duration = settings.getValue("duration", 1.0);
 	float fps = settings.getValue("fps", 1.0);
 	
 	int numFrames = duration * fps;
 	int numMovies = dir.listDir("movies");
 	int totalFrames = numFrames * numMovies;
-		
+    
 	float movieRatio = movieSize.x / movieSize.y;
 	
-	float texArea = texSize.x * texSize.y;	
+	float texArea = texSize.x * texSize.y;
 	float fitArea = texArea / (float)totalFrames;
 	
 	float fitHeight = sqrt(fitArea/movieRatio);
@@ -34,7 +34,7 @@ void testApp::setup(){
 					fitHeight);
 	
 	ofVec2f numUnits(ceil(texSize.x / fitSize.x),
-					ceil(texSize.y / fitSize.y));	
+                     ceil(texSize.y / fitSize.y));
 	
 	ofVec2f size = texSize / numUnits;
 	ofVec2f scale = movieSize / size;
@@ -78,7 +78,7 @@ void testApp::setup(){
 		}
 		js << "]";
 		if(i < numMovies-1) js << ",";
-
+        
 	}
 	
 	js << "]";
